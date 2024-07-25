@@ -34,7 +34,7 @@ jobs:
           tags: build-demo:latest
           file: ./Dockerfile
       - name: Test the Docker image
-      - run: |
+        run: |
           docker run -d -p 8000:8000 build-demo:latest
           sleep 5
           curl --fail-with-body http://localhost:8000/health
