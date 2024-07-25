@@ -39,5 +39,6 @@ jobs:
           image: build-demo:latest
           options: -p 8000:8000
           run: |
+            python server.py &
             sleep 5
             curl --fail-with-body http://localhost:8000/health
