@@ -14,17 +14,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-      - name: Install poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          virtualenvs-path: .venv
-          installer-parallel: true
       - name: Test with pytest
         if: github.actor != 'dependabot[bot]'
         run: |
